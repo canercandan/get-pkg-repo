@@ -183,3 +183,15 @@ it('should parse weird unknown host', function() {
     domain: 'unknown-host'
   });
 });
+
+it('should parse gitlab subgroups', function() {
+  var url = 'https://gitlab.com/group/subgroup/project.git';
+  var repo = parse(url);
+  assertRepo(repo, {
+    browse: 'https://gitlab.com/group/subgroup/project',
+    domain: 'gitlab.com',
+    user: 'group%2Fsubgroup',
+    project: 'project',
+    type: 'gitlab'
+  });
+});
