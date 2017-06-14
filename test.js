@@ -190,7 +190,7 @@ it('should parse gitlab subgroups', function() {
   assertRepo(repo, {
     browse: 'https://gitlab.com/group/subgroup/project',
     domain: 'gitlab.com',
-    user: 'group%2Fsubgroup',
+    user: 'group/subgroup',
     project: 'project',
     type: 'gitlab'
   });
